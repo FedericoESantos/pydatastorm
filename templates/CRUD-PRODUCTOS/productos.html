@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Productos | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <h1 class="titulo-servicios">Productos Efectivos para Empresas o Comercios.</h1>
+
+        <div class="servicios">
+            {% for producto in prod %}
+            <div class="card">
+                <img src="{{ url_for('static', filename='img/productos/' + (producto.imagen or 'sinimagen.png')) }}"
+                    alt="Imagen Producto">
+                <div class="card-info">
+                    <p><strong>Nombre: </strong>{{producto.nombre}}</p>
+                    <p><strong>Precio: </strong> $ {{producto.precio}}</p>
+                    <div class="botones">
+                        <a href="{{ url_for('detalleProd', id=producto.id) }}" class="btn-ver">Ver Detalle</a>
+                        <a href="{{ url_for('ver_carrito') }}" class="carrito-img btn-ver"><img src="/static/img/carrito3.png" alt="carrito" class="carrito-img"></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+    </main>
+
+{% endblock %}

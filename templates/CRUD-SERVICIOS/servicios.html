@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Servicios | {{ title }}{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <h1 class="titulo-servicios">Servicios Efectivos para Empresas o Comercios.</h1>
+
+    <div class="servicios">
+        {% for servicio in serv %}
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/servicios/' + (servicio.imagen or 'sinimagen.png')) }}"
+                alt="Imagen Servicio">
+            <div class="card-info">
+                <p><strong>Nombre: </strong>{{servicio.nombre}}</p>
+                <p><strong>Precio: $ </strong> $ {{servicio.precio}}</p>
+                <div class="botones">
+                    <a href="{{ url_for('detalleServ', id=servicio.id) }}" class="btn-ver">Ver Detalle</a>
+                    <a href="{{ url_for('ver_carrito') }}" class="carrito-img btn-ver"><img src="/static/img/carrito3.png" alt="carrito" class="carrito-img"></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>
+
+{% endblock %}

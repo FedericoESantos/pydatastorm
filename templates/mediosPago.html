@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Medios de Pago | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>Medios de Pago.</h1>
+    <hr>
+    <div class="pagos-info">
+        <div class="mercado-pago">
+            <img src="/static/img/pagos/mercado-pago.png" alt="logo-mp">
+            <strong>Alias:</strong>
+            <p>Fede.lp.1979</p>
+        </div>
+        <div class="comprobante">
+            <span>
+                Una vez realizado el pago se enviará el comprobante por mail.
+            </span>
+            <img src="/static/img/contacto/correo.png" alt="logo-pequeño">
+        </div>
+        <div class="banco">
+            <img src="/static/img/pagos/banco.png" alt="logo-bco">
+            <strong>Alias:</strong>
+            <p>FLOR.FINURA.REASUME</p>
+        </div>
+    </div>
+
+{% endblock %}

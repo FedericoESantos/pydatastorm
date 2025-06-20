@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrito | {{ title }}{% endblock %}
+
+{% block content %}
+
+<main>
+    <h1>Carrito</h1>
+
+    <div class="carrito">
+        <div class="info-compra">
+            <span>
+                Puede pagar el Producto o el Servicio deseado, haciendo <i>click</i> en
+                <strong>"Pagar"</strong>. <br> Si se presentan inconvenientes con la plataforma
+                puede pagar con transferencia a: <br>
+                <strong>Alias: FLOR.FINURA.REASUME</strong>
+                <br>
+                Una vez, realizado el pago nos pondremos en contacto a la brevedad para organizar el trabajo pedido.
+                <br>
+                ¡ Muchas Gracias !
+
+
+            </span>
+        </div>
+        {% if carrito %}
+
+        <div class="tabla-scroll">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto/Servicio</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for id, item in carrito.items() %}
+                    <tr>
+                        <td data-label="Producto/Servicio">{{ item.nombre }}</td>
+                        <td data-label="Precio Unitario">${{ item.precio }}</td>
+                        <td data-label="Cantidad">{{ item.cantidad }}</td>
+                        <td data-label="Subtotal">${{ item.precio * item.cantidad }}</td>
+                        <td data-label="Acción">
+                            <a href="{{ url_for('eliminar_del_carritoProd', producto_id=id) }}">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+
+        <h3>Total: ${{ total }}</h3>
+
+        <div class="comprar">
+            <a href="{{ url_for('comprar_carrito') }}" class="btn-comp btn btn-success">Comprar</a>
+
+        </div>
+
+        {% else %}
+        <h2>No hay productos en el carrito.<h2>
+                {% endif %}
+    </div>
+</main>
+
+
+{% endblock %}
