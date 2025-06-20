@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: py-data-storm
+    env: python
+    buildCommand: ""
+    startCommand: "gunicorn app:app"
+    envVars:
+      - key: SECRET_KEY
+        sync: false
+      - key: MP_ACCESS_TOKEN
+        sync: false
+      - key: SQL_FULL_URL
+        sync: false
+      - key: MAIL_SERVER
+        sync: false
+      - key: MAIL_PORT
+        sync: false
+      - key: MAIL_USER
+        sync: false
+      - key: MAIL_PASS
+        sync: false
+      - key: MAIL_SENDER
+        sync: false
