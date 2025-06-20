@@ -26,7 +26,7 @@ user_db = os.getenv('SQL_USER')
 pass_db = os.getenv('SQL_PASS') # ****************** PASSWORD BASE DE DATOS *************************
 url_db = os.getenv('SQL_HOST')
 name_db = os.getenv('SQL_DB')
-full_url_db = os.getenv(f'postgresql://{user_db}:{pass_db}@{url_db}/{name_db}')
+full_url_db = f'postgresql://{user_db}:{pass_db}@{url_db}/{name_db}'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = full_url_db
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
