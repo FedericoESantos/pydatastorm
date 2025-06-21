@@ -428,10 +428,7 @@ if __name__ == '__main__':
     # PRUEBA SI SE CONECTA A LA BASE DE DATOS
     with app.app_context():
         try:
-            # Solo intenta traer los productos
-            productos = Producto.query.all()
             db.create_all()
-            print(f"Conexión exitosa. Hay {len(productos)} productos en la base.")
+            print("Tablas creadas o existentes.")
         except Exception as e:
-            print(f"Error de conexión a la base de datos: {e}")
-    app.run(debug=True)
+            print(f"Error creando tablas: {e}")
