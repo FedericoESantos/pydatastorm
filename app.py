@@ -363,8 +363,8 @@ def comprar_producto(id_producto):
             }
         ],
         "back_urls": {
-            "success": "http://localhost:5000/pago_exitoso",
-            "failure": "http://localhost:5000/pago_fallido",
+            "success": url_for('pago_exitoso', _external=True),
+            "failure": url_for('pago_fallido', _external=True),
         },
         "auto_return": "approved"
     }
