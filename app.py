@@ -29,7 +29,7 @@ url_db = os.getenv('SQL_HOST')
 name_db = os.getenv('SQL_DB')
 full_url_db = f'postgresql://{user_db}:{pass_db}@{url_db}/{name_db}'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL').strip()
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # INICIALIZACION - CONFIGURACION DE LA MIGRACION A LA BASE DE DATOS
@@ -428,6 +428,7 @@ if __name__ == '__main__':
     # PRUEBA SI SE CONECTA A LA BASE DE DATOS
     with app.app_context():
         try:
+            print(f"DB URL: '{os.getenv('DATABASE_URL')}'")
             db.create_all()
             print("Tablas creadas o existentes.")
         except Exception as e:
