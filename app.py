@@ -149,6 +149,10 @@ def productos():
             filename = secure_filename(form.imagen.data.filename)
             ruta_imagen = os.path.join(app.root_path, 'static/img/productos', filename)
             form.imagen.data.save(ruta_imagen)
+        elif form.imagen.data and os.environ.get("RENDER") == "true":
+    # En Render no guardamos la imagen porque no se puede
+    # Solo usamos el nombre del archivo que ya subiste manualmente al repo
+            filename = secure_filename(form.imagen.data.filename)
         else:
             filename = 'sinimagen.png'  # por si no cargan nada
 
