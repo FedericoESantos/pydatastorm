@@ -37,6 +37,15 @@ db.init_app(app)
 migrate = Migrate()
 migrate.init_app(app,db)
 
+# CREA LAS TABLAS PARA LA BASE DE DATOS ALCHEMY 
+with app.app_context():
+    try:
+        print(f"DB URL: '{os.getenv('DATABASE_URL')}'")
+        db.create_all()
+        print("Tablas creadas o existentes.")
+    except Exception as e:
+        print(f"Error creando tablas: {e}")
+
 # Configuración Flask-Mail
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
 app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
