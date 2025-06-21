@@ -42,7 +42,7 @@ class ProductoForm(FlaskForm):
     detalle = StringField('Detalle', validators=[DataRequired()])
     precio = FloatField('Precio', validators=[DataRequired(), NumberRange(min=0)])
     imagen = FileField('Imagen', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'webp'], 'Solo imágenes.')])
-
+    imagen_nombre = StringField('Nombre de imagen')
     enviar = SubmitField('enviar')
 
 
@@ -51,7 +51,7 @@ class ServicioForm(FlaskForm):
     detalle = StringField('Detalle', validators=[DataRequired()])
     precio = FloatField('Precio', validators=[DataRequired(), NumberRange(min=0)])
     imagen = FileField('Imagen', validators=[FileAllowed(['jpg', 'png', 'jpeg', 'webp'], 'Solo imágenes.')])
-
+    imagen_nombre = StringField('Nombre de imagen')
     enviar = SubmitField('enviar')
 
 class VisitasUnicas(db.Model):

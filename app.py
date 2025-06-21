@@ -250,10 +250,12 @@ def editarProd(id):
     if request.method == 'POST':
         if productoForm.validate_on_submit():
             productoForm.populate_obj(producto)
+            if productoForm.imagen_nombre.data:
+                producto.imagen = productoForm.imagen_nombre.data
             db.session.commit()
             flash('Producto agregado correctamente.', 'success')
             return redirect(url_for('editarProd', id=id)) # ACA REDIRIGIR A LA PAGINA DONDE SE VEAN TODOS
-    return render_template('/CRUD-PRODUCTOS/editarProd.html', title=titulo, editarForm = productoForm)
+    return render_template('/CRUD-PRODUCTOS/editarProd.html', title=titulo, editarForm = productoForm, producto = producto)
 
 @app.route('/editarServ/<int:id>', methods=['GET','POST'])
 def editarServ(id):
@@ -262,10 +264,12 @@ def editarServ(id):
     if request.method == 'POST':
         if servicioForm.validate_on_submit():
             servicioForm.populate_obj(servicio)
+            if servicioForm.imagen_nombre.data:
+                servicio.imagen = servicioForm.imagen_nombre.data
             db.session.commit()
             flash('Servicio agregado correctamente.', 'success')
             return redirect(url_for('editarServ', id=id)) # ACA REDIRIGIR A LA PAGINA DONDE SE VEAN TODOS
-    return render_template('/CRUD-SERVICIOS/editarServ.html', title=titulo, editarForm = servicioForm)
+    return render_template('/CRUD-SERVICIOS/editarServ.html', title=titulo, editarForm = servicioForm, servicio = servicio)
 
 # RUTA PARA ELIMINAR PRODUCTOS y SERVICIOS
 # ****************************************

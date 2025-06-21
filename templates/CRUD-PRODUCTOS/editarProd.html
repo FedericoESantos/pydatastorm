@@ -17,8 +17,9 @@
         <p>{{editarForm.precio.label}}</p>
         <p>{{editarForm.precio(size=30)}}</p>
 
+        <p>Imagen actual: {{ producto.imagen }}</p>
         <p>{{ editarForm.imagen.label }}</p>
-        <p>{{ editarForm.imagen(size=30) }}</p>
+        <p>{{ editarForm.imagen_nombre(value=producto.imagen) }}</p>
 
         <p class="enviar">{{editarForm.enviar()}}</p>
 
