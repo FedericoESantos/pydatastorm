@@ -6,6 +6,7 @@ from flask_mail import Mail, Message
 from flask_migrate import Migrate
 from werkzeug.utils import redirect, secure_filename
 from dotenv import load_dotenv
+from sqlalchemy.exc import OperationalError
 
 from database import db
 from models import Producto, ProductoForm, Servicio, ServicioForm, VisitasUnicas
@@ -76,23 +77,26 @@ def pagina_No_Encontrada(error):
 
 @app.route('/')
 def inicio():
-    visitas = VisitasUnicas.query.first()
-    if not visitas:
-        visitas = VisitasUnicas(contador=0)
-        db.session.add(visitas)
-        db.session.commit()
+    try:
+        visitas = VisitasUnicas.query.first()
+        if not visitas:
+            visitas = VisitasUnicas(contador=0)
+            db.session.add(visitas)
+            db.session.commit()
 
-    # Ver si usuario ya tiene cookie
-    if not request.cookies.get('visitante'):
-        visitas.contador += 1
-        db.session.commit()
-        nueva_respuesta = make_response(render_template('inicio.html', title=titulo, visitas=visitas.contador))
-        # Poner cookie que dura 1 año para marcar que ya vino
-        nueva_respuesta.set_cookie('visitante', 'true', max_age=60*60*24*365)
-        return nueva_respuesta
-    else:
-        # Ya vino antes, no aumenta
-        return render_template('inicio.html', title=titulo)
+        if not request.cookies.get('visitante'):
+            visitas.contador += 1
+            db.session.commit()
+            nueva_respuesta = make_response(render_template('inicio.html', title=titulo, visitas=visitas.contador))
+            nueva_respuesta.set_cookie('visitante', 'true', max_age=60*60*24*365)
+            return nueva_respuesta
+        else:
+            return render_template('inicio.html', title=titulo)
+        
+    except OperationalError:
+        # Si no existe la tabla, la creo
+        db.create_all()
+        return redirect(url_for('inicio'))
 
 @app.route('/empresa')
 def empresa():
