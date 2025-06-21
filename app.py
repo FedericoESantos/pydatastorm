@@ -12,7 +12,8 @@ from models import Producto, ProductoForm, Servicio, ServicioForm, VisitasUnicas
 
 
 app = Flask(__name__)
-load_dotenv()  # Carga las variables desde .env al entorno
+if os.environ.get("RENDER") != "true":
+    load_dotenv() # Carga las variables desde .env al entorno
 
 titulo = 'Py Data Storm'
 app.secret_key= os.getenv('SECRET_KEY') # ****************** PASSWORD DE SESSIONES *************************
@@ -28,7 +29,7 @@ url_db = os.getenv('SQL_HOST')
 name_db = os.getenv('SQL_DB')
 full_url_db = f'postgresql://{user_db}:{pass_db}@{url_db}/{name_db}'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = full_url_db
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # INICIALIZACION - CONFIGURACION DE LA MIGRACION A LA BASE DE DATOS
