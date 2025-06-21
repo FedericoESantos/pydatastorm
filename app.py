@@ -430,6 +430,7 @@ if __name__ == '__main__':
         try:
             # Solo intenta traer los productos
             productos = Producto.query.all()
+            db.create_all()
             print(f"Conexión exitosa. Hay {len(productos)} productos en la base.")
         except Exception as e:
             print(f"Error de conexión a la base de datos: {e}")
