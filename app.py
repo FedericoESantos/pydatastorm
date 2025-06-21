@@ -39,7 +39,7 @@ migrate.init_app(app,db)
 # Configuración Flask-Mail
 app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER')
 app.config['MAIL_PORT'] = os.getenv('MAIL_PORT')
-app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'True') == 'True'
 app.config['MAIL_USERNAME'] = os.getenv('MAIL_USER')
 app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASS') # ****************** PASSWORD GMAIL *************************
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_SENDER')
@@ -54,7 +54,7 @@ def inject_visitas():
 
 
 # VARIABLE PARA FORMULARIOS
-app.config['SECRET_KEY'] = os.getenv('pass_form') # ****************** PASSWORD FORMULARIOS *************************
+app.config['SECRET_KEY'] = os.getenv('PASS_FORM') # ****************** PASSWORD FORMULARIOS *************************
 
 # *****************************************************************
 # ******************** RUTAS ***********************************
