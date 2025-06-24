@@ -356,6 +356,7 @@ section .imagen img {
 .medios-contacto .contacto {
     text-align: center;
 }
+
 .medios-contacto .contacto h3 {
     padding: 10px;
 }
@@ -547,10 +548,12 @@ button:hover {
 .titulo-servicios {
     padding: 15px;
 }
+
 .a {
     display: flex;
     justify-content: center;
 }
+
 .aclaracion {
     display: flex;
     flex-direction: column;
@@ -562,16 +565,19 @@ button:hover {
     padding: 10px;
     border-style: double;
 }
+
 .aclaracion strong {
     background-color: #021122;
     color: #57a8f5;
 }
+
 .aclaracion a {
     text-decoration: none;
     color: #104786;
     font-weight: bolder;
     text-shadow: 2px 2px 8px rgb(212, 222, 223);
 }
+
 .servicios {
     display: flex;
     width: 100%;
@@ -908,6 +914,7 @@ td {
     color: #275ca1;
     text-shadow: 2px 2px 5px rgb(202, 198, 198);
 }
+
 .rutas-serv {
     display: flex;
     width: 100%;
@@ -917,6 +924,7 @@ td {
     text-align: center;
     gap: 20px;
 }
+
 .rutas-serv ul {
     list-style: none;
     display: flex;
@@ -927,9 +935,11 @@ td {
     padding: 0;
     margin: 0;
 }
+
 .rutas-serv li {
     margin: 0;
 }
+
 .rutas-serv button {
     padding: 6px 12px;
     font-size: 14px;
@@ -939,9 +949,11 @@ td {
     color: white;
     cursor: pointer;
 }
+
 .rutas-serv button:hover {
     background-color: #063358;
 }
+
 .container-serv {
     display: flex;
     flex-direction: column;
@@ -950,31 +962,146 @@ td {
     padding: 20px;
     background-color: #0c488083;
 }
+
 .seccion {
     justify-content: flex-start;
 }
+
 .seccion h4 {
     padding: 10px;
 }
+
 .seccion span {
     padding: 5px;
     font-size: 18px;
 }
 
+/****************** PAGINA DE CURSOS - INICIO ***********************/
+.cur {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    background-color: #021122a8;
+}
 
+.cur h2 {
+    color: #f3f6f7;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+    padding: 20px;
+}
 
+.cur .card-cursos {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+}
 
+.cur .card-cursos .card-curso {
+    width: 350px;
+    flex-wrap: wrap;
+    text-shadow: 2px 2px 5px black;
+    border-style: double;
+}
 
+.cur .card-cursos .card-curso img {
+    width: 100%;
+    height: auto;
+}
 
+.cur .card-cursos .card-info h3 {
+    color: #79b2f3;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+}
+.cur .card-cursos .card-info span{
+    color: whitesmoke;
+    text-align: center;
+}
+.cur .card-cursos .card-info span a {
+    text-decoration: none;
+    padding: 20px;
+    color: rgb(241, 241, 193);
+}
+.cur .card-cursos .card-info span a:hover {
+    color: #bcdaf7;
+    text-shadow: 2px 2px 5px black;
+}
 
-
-
-
-
-
-
-
-
+/****************** PAGINA DE CURSOS ***********************/
+.capacitaciones {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #0c48806c;
+}
+.capacitaciones span {
+    text-align: center;
+    padding: 10px;
+}
+.capacitaciones .card-contenedor {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.capacitaciones .card-contenedor .card {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: auto;
+    overflow: hidden;
+    border-style: groove;
+    background-color: #0c4880b2;
+    text-align: center;
+    box-shadow: 2px 2px 6px black;
+}
+.capacitaciones .card-contenedor .card img {
+    width: 250px;
+    padding-bottom: 10px;
+}
+.capacitaciones .card-contenedor .card .card-info {
+    padding: 10px;
+}
+.capacitaciones .card-contenedor .card .card-info h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px black;
+}
+.capacitaciones .card-contenedor .card .card-info strong {
+    color: #accaf7;
+    text-shadow: 2px 2px 5px black;
+}
+.capacitaciones .card-contenedor .card .card-info span {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.capacitaciones .card-contenedor .card .card-info p {
+    color: #ffffff;
+    padding: 10px;
+    text-shadow: 2px 2px 5px black;
+}
+.capacitaciones .card-contenedor .card .card-info a {
+    text-decoration: none;
+    padding: 10px;
+    color: #f0eab2;
+    text-shadow: 2px 2px 5px black;
+}
+.capacitaciones .card-contenedor .card .card-info a:hover {
+    color: #dab40b;
+    text-shadow: 2px 2px 5px black;
+    font-weight: bolder;
+}
 
 
 
@@ -1159,6 +1286,16 @@ td {
         width: 100%;
         height: auto;
     }
+
+    .cur .card-cursos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cur .card-cursos .card-curso {
+        width: 200px;
+    }
+    
 }
 
 @media (max-width: 600px) {

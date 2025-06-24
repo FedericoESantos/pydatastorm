@@ -30,6 +30,7 @@
         <nav>
             <a href="{{ url_for('inicio') }}"><button class="btn btn1">Inicio</button></a>
             <a href="{{ url_for('empresa') }}"><button class="btn btn1">Empresa</button></a>
+            <a href="{{ url_for('cursos') }}"><button class="btn btn1">Cursos</button></a>
             <a href="{{ url_for('productos') }}"><button class="btn btn1">Productos</button></a>
             <a href="{{ url_for('servicios') }}"><button class="btn btn1">Servicios</button></a>
             <a href="{{ url_for('mediosPago') }}"><button class="btn btn1">Medios de Pago</button></a>
@@ -70,7 +71,12 @@
                 </li>
                 <strong>
                     <p>|</p>
-                                </strong>
+                <li>
+                    <a href="{{ url_for('cursos') }}">Cursos</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
                 <li>
                     <a href="{{ url_for('disenio') }}">Diseño Gráfico</a>
                 </li>

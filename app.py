@@ -103,6 +103,10 @@ def inicio():
 def empresa():
     return render_template('empresa.html', title=titulo)
 
+@app.route('/cursos')
+def cursos():
+    return render_template('cursos.html', title=titulo)
+
 # *****************************************************************
 # ****** RUTAS DE DETALLES SOBRE LOS PRODUCTOS Y SERVICIOS ********
 # *****************************************************************
@@ -554,5 +558,6 @@ if __name__ == '__main__':
             print(f"Error creando tablas: {e}")
 
     # 🚀 Levanta la app en el puerto que Render espera
-    port = int(os.environ.get('PORT', 5000))  # Render te da el puerto en PORT
-    app.run(host='0.0.0.0', port=port)
+    #port = int(os.environ.get('PORT', 5000))  # Render te da el puerto en PORT
+    #app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)

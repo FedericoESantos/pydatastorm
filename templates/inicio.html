@@ -39,6 +39,33 @@
     </div>
 </div>
 
+<hr>
+
+<div class="cur">
+
+    <h2>Cursos y Capacitaciones</h2>
+
+    <div class="card-cursos">
+
+        <div class="card-curso">
+            <img src="/static/img/cursos/cursos-inicio.jpg" alt="cursos">
+        </div>
+        <div class="card-info">
+            <h3>Descubrí nuestros cursos y convertite en experto.</h3>
+            <span>
+                <p>Aprendé Python desde cero hasta avanzado, dominá desarrollo web con HTML, CSS y JavaScript, y llevá
+                    Python más allá: Machine Learning, Análisis de Datos, Robótica y Automatización en Excel.
+                    Formate hoy, aplicalo mañana. </p>
+                <a href="{{ url_for('cursos') }}"><p>👉 ¡Sumate ahora y empezá a transformar tu futuro!</p></a>
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+<hr>
+
 <section>
     <div class="info">
         <h2>Soluciones Empresariales</h2>
@@ -104,11 +131,15 @@
         <h2>Redes</h2>
         <div>
             <img src="{{ url_for('static', filename='img/redes/facebook.png') }}" alt="face">
-            <a href="https://www.facebook.com/pydatastorm/"><p>/pydatastorm</p></a>
+            <a href="https://www.facebook.com/pydatastorm/">
+                <p>/pydatastorm</p>
+            </a>
         </div>
         <div>
             <img src="{{ url_for('static', filename='img/redes/instagram.png') }}" alt="insta">
-            <a href="https://www.instagram.com/pydatastorm/"><p>/pydatastorm</p></a>
+            <a href="https://www.instagram.com/pydatastorm/">
+                <p>/pydatastorm</p>
+            </a>
         </div>
         <div>
             <img src="{{ url_for('static', filename='img/redes/youtube.png') }}" alt="youtube">
@@ -153,4 +184,3 @@
 </div>
 
 {% endblock %}
-
