@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Servicios | {{ title }}{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <h1 class="titulo-servicios">Servicios Efectivos para Empresas o Comercios.</h1>
+    <div class="a">
+        <div class="aclaracion">
+                <p><strong>PAGO MENSUAL:</strong> El pago por un servicio es por cada mes.</p> <br>
+                <p><strong>RECOMENDACIÓN:</strong> Antes de realizar un pago por un producto <br>
+                o servicio, le recomendamos enviarnos un mensaje desde <a href="{{ url_for('contacto') }}">Contacto</a> <br>
+                para que nos explique bien cual es el producto o servicio que desea comprar. Lo asesoraremos antes <br>
+                de realizar la compra.</p> 
+            </div>
+    </div>
+        <br>
+    <div class="servicios">
+        {% for servicio in serv %}
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/servicios/' + (servicio.imagen or 'sinimagen.png')) }}"
+                alt="Imagen Servicio">
+            <div class="card-info">
+                <p><strong>Nombre: </strong>{{servicio.nombre}}</p>
+                <p><strong>Precio: </strong> $ {{ "{:,}".format(servicio.precio | int).replace(",", ".") }} ARS</p>
+                <small>Todos los precios en pesos argentinos (ARS)</small>
+                <div class="botones">
+                    <a href="{{ url_for('detalleServ', id=servicio.id) }}" class="btn-ver">Ver Detalle</a>
+                    <a href="{{ url_for('ver_carrito') }}" class="carrito-img btn-ver"><img src="/static/img/carrito3.png" alt="carrito" class="carrito-img"></a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>
+
+{% endblock %}

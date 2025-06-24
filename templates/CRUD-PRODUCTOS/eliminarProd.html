@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Productos | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>Eliminar Productos</h1>
+    <br>
+    {% for producto in productos %}
+    <p>{{ producto.nombre }} - ${{ producto.precio|int }}</p>
+    <a href="{{ url_for('eliminarProd', id=producto.id) }}"
+        onclick="return confirm('¿Seguro que querés eliminar este producto?')">Eliminar</a>
+    {% endfor %}
+    </div>
+
+    <button onclick="location.href='productos'">
+        Regresar al listado de productos
+    </button>
+
+{% endblock %}

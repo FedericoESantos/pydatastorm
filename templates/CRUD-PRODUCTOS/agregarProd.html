@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Productos | {{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="formularios">
+    <div class="agregar">
+        <h1>Agregar Productos</h1>
+        <br>
+        <form method="post" enctype="multipart/form-data"> 
+            {{prodForm.csrf_token}}
+
+            <p>{{prodForm.nombre.label}}</p>
+            <p>{{prodForm.nombre(size=30)}}</p>
+
+            <p>{{prodForm.detalle.label}}</p>
+            <p>{{prodForm.detalle(size=30)}}</p>
+
+            <p>{{prodForm.precio.label}}</p>
+            <p>{{prodForm.precio(size=30)}}</p>
+
+            <p>{{prodForm.imagen.label}}</p>
+            <p>{{prodForm.imagen()}}</p>
+
+            <p class="enviar">{{prodForm.enviar()}}</p>
+
+        </form>
+    </div>
+
+</div>
+
+<button onclick="location.href='productos'">
+    Regresar al listado de productos
+</button>
+
+{% endblock %}

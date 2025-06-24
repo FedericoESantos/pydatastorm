@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}App Web | {{ title }}{% endblock %}
+
+{% block content %}
+
+<h1 class="titulo-serv">Aplicaciones Web</h1>
+
+<div class="rutas-serv">
+    <ul>
+        <li>
+            <a href="{{ url_for('disenio') }}"><button>Diseño Gráfico</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('base_datos') }}"><button>Base de Datos</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appweb') }}"><button>Aplicaciones Webs</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appescritorio') }}"><button>Aplicaciones de Escritorio</button></a>
+        </li>
+</div>
+
+<div class="container-serv">
+
+    <video src="">
+
+    </video>
+
+    <div class="seccion">
+        <h3>¿ Que son las Aplicaciones Web ?</h3>
+        <span>Las aplicaciones web son programas o sistemas que se utilizan a través de internet desde un navegador, sin
+            necesidad de instalarlos en una computadora o dispositivo.
+
+            Se accede a ellas mediante una dirección web y permiten realizar distintas tareas, como gestionar datos,
+            cargar información, hacer compras online, enviar formularios o consultar reportes en tiempo real.
+
+            Son ideales para empresas porque permiten trabajar desde cualquier lugar, mantener los datos centralizados y
+            brindar servicios a clientes o empleados de forma rápida, segura y accesible desde cualquier
+            dispositivo.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>¿ Cual es la diferencia de sitio Web y Pagina Web ?</h3>
+        <span>Un sitio web es un conjunto de páginas web conectadas entre sí bajo un mismo dominio (por ejemplo:
+            www.miempresa.com). Puede incluir secciones como inicio, contacto, servicios, blog, productos, etc. Es como
+            un edificio con varias habitaciones, donde cada habitación es una página distinta.
+
+            Una página web, en cambio, es un único documento dentro de ese sitio. Por ejemplo, la página de contacto o
+            la página de servicios es solo una parte del sitio completo.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Modo Responsivo para adaptar tu proyecto a cualquier plataforma.</h3>
+        <span>El modo responsivo es la técnica de diseño web que hace que tu proyecto se adapte automáticamente a
+            cualquier tamaño de pantalla o dispositivo: celulares, tablets, laptops o pantallas gigantes.
+
+            Así, tu sitio o app siempre se ve bien, es usable y cómodo, sin importar desde dónde lo acceda el
+            usuario.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Comunicación constante entre dueño y cliente mediante formularios.</h3>
+        <span>La comunicación constante entre dueño y cliente mediante formularios es una estrategia clave para mantener
+            un canal directo y efectivo.
+
+            Los formularios permiten que los clientes hagan consultas, pedidos, reclamos o sugerencias fácilmente desde
+            la web, y que el dueño reciba esa información organizada y rápida para responder o tomar acción.
+
+            Esto mejora la atención, genera confianza y ayuda a construir relaciones duraderas con los clientes,
+            potenciando la satisfacción y fidelización.</span>
+    </div>
+
+</div>
+
+{% endblock %}

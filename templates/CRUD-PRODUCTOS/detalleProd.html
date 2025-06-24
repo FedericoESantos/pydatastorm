@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Producto | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <main>
+      
+        <h1>Detalle del Producto</h1>
+        <div class="detalles">
+            <p><strong>ID: </strong>{{prod.id}}</p>
+            <p><strong>Nombre: </strong>{{prod.nombre}}</p>
+            <p><strong>Detalle: </strong>{{prod.detalle}}</p>
+            <p><strong>Precio: </strong> $ {{ "{:,}".format(prod.precio | int).replace(",", ".") }} ARS</p>
+            <p><small>Todos los precios en pesos argentinos (ARS)</small></p>
+            <a href="{{ url_for('agregar_carritoProd', producto_id=prod.id) }}">Agregar al Carrito</a>
+        </div>
+    </main>
+
+    <button onclick="location.href='/productos'">
+        Regresar al listado de productos
+    </button>
+
+{% endblock %}

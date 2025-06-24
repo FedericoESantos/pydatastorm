@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{title}}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/nubes.ico') }}" type="image/x-icon">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8049532759777520"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+            </div>
+            <div class="titulo">
+                <h1>{{title}}</h1>
+                <p>Una tormenta de ideas para tu empresa.</p>
+            </div>
+            <div class="visitas">
+                <p>Visitas</p>
+                <p>{{ visitas }}</p>
+            </div>
+        </div>
+        <nav>
+            <a href="{{ url_for('inicio') }}"><button class="btn btn1">Inicio</button></a>
+            <a href="{{ url_for('empresa') }}"><button class="btn btn1">Empresa</button></a>
+            <a href="{{ url_for('productos') }}"><button class="btn btn1">Productos</button></a>
+            <a href="{{ url_for('servicios') }}"><button class="btn btn1">Servicios</button></a>
+            <a href="{{ url_for('mediosPago') }}"><button class="btn btn1">Medios de Pago</button></a>
+            <a href="{{ url_for('ver_carrito') }}"><button class="btn btn1">Carrito</button></a>
+            <a href="{{ url_for('contacto') }}"><button class="btn btn1">Contacto</button></a>
+            <a href="{{ url_for('ver_carrito') }}" class="carrito-navbar">
+                🛒 <span class="contador-carrito">{{ session['carrito']|length if session.get('carrito') else 0
+                    }}</span>
+            </a>
+        </nav>
+    </header>
+    <hr>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+        <div class="rutas">
+            <ul>
+                <li>
+                    <a href="{{ url_for('inicio') }}">Inicio</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('empresa') }}">Empresa</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                                </strong>
+                <li>
+                    <a href="{{ url_for('disenio') }}">Diseño Gráfico</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                                </strong>
+                <li>
+                    <a href="{{ url_for('base_datos') }}">Base de Datos</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                                </strong>
+                <li>
+                    <a href="{{ url_for('appweb') }}">Aplicaciones Webs</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                                </strong>
+                <li>
+                    <a href="{{ url_for('appescritorio') }}">Aplicaciones de Escritorio</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('productos') }}">Productos</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('servicios') }}">Servcicios</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('mediosPago') }}">Medios de Pago</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('ver_carrito') }}">Carrito</a>
+                </li>
+                <strong>
+                    <p>|</p>
+                </strong>
+                <li>
+                    <a href="{{ url_for('contacto') }}">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="derechos">
+            <p>Todos los Derechos Reservados - 2025</p>
+            <a href="{{ url_for('politica') }}">Política de Privacidad</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

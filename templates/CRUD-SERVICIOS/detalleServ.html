@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del Servicio | {{ title }}{% endblock %}
+
+{% block content %}
+
+<main>
+
+    <h1>Detalle del Servicio</h1>
+    <div class="detalles">
+        <p><strong>ID: </strong>{{serv.id}}</p>
+        <p><strong>Nombre: </strong>{{serv.nombre}}</p>
+        <p><strong>Detalle: </strong>{{serv.detalle}}</p>
+        <p><strong>Precio: </strong> $ {{ "{:,}".format(serv.precio | int).replace(",", ".") }} ARS</p>
+        <p><small>Todos los precios en pesos argentinos (ARS)</small></p>
+        <a href="{{ url_for('agregar_carritoServ', servicio_id=serv.id) }}">Agregar al Carrito</a>
+    </div>
+</main>
+
+<button onclick="location.href='/servicios'">
+    Regresar al listado de servicios
+</button>
+
+{% endblock %}

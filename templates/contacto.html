@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <main>
+        <h1>Contacto</h1>
+        <div class="formulario-con">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.nombre.label }}<br>
+                    {{ form.nombre(size=40) }}
+                </p>
+                <p>
+                    {{ form.apellido.label }}<br>
+                    {{ form.apellido(size=40) }}
+                </p>
+                <p>
+                    {{ form.email.label }}<br>
+                    {{ form.email(size=40) }}
+                </p>
+                <p>
+                    {{ form.comentario.label }}<br>
+                    {{ form.comentario(rows=5, cols=40) }}
+                </p>
+                <p>{{ form.enviar() }}</p>
+            </form>
+
+            <div class="orga">
+                <span>
+                    ♦ Dejanos tu duda o consulta. <br> <br>
+                    ♦ Si deseas obtener información mas detalla del manejo de un producto
+                    o servicio, dejanos tu consulta. <br> <br>
+                    ♦ Una vez realizado el pago de un producto o servicio, nos pondremos
+                    en contacto para organizar el trabajo pedido.
+                </span>
+            </div>
+
+            <img src="/static/img/contactoMail/contactanos.jpg" alt="Imagen contacto">
+
+        </div>
+
+    </main>
+
+{% endblock %}

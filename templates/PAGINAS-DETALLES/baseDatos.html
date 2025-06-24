@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}Base de Datos | {{ title }}{% endblock %}
+
+{% block content %}
+
+<h1 class="titulo-serv">Base de Datos</h1>
+
+<div class="rutas-serv">
+    <ul>
+        <li>
+            <a href="{{ url_for('disenio') }}"><button>Diseño Gráfico</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('base_datos') }}"><button>Base de Datos</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appweb') }}"><button>Aplicaciones Webs</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appescritorio') }}"><button>Aplicaciones de Escritorio</button></a>
+        </li>
+</div>
+
+
+<div class="container-serv">
+
+    <video src="">
+
+    </video>
+
+    <div class="seccion">
+        <h3>¿ Que son las Bases de Datos ?</h3>
+        <span>Las bases de datos son sistemas organizados que permiten almacenar, gestionar y recuperar grandes
+            cantidades de información de forma rápida, segura y ordenada.
+
+            Se utilizan para guardar datos importantes como clientes, productos, ventas, inventarios o cualquier tipo de
+            información que una empresa o proyecto necesite conservar y consultar cuando sea necesario.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>¿ Que es el sistema SAP ?</h3>
+        <span>SAP es un sistema de administración empresarial que permite gestionar de forma centralizada distintas
+            áreas de una organización, como recursos humanos, ventas, finanzas, inventario y producción.
+
+            Dentro de SAP, existen módulos específicos para la gestión de personas, que ayudan a registrar, organizar y
+            controlar todo lo relacionado con los empleados: desde su información personal y salarios, hasta licencias,
+            capacitaciones y desempeño laboral.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Bases de Datos para Comercios/Industrias</h3>
+        <span>Las bases de datos para comercios o empresas son sistemas que permiten almacenar y organizar información
+            esencial para el funcionamiento del negocio, como registros de clientes, productos, ventas, proveedores,
+            stock y facturación.
+
+            Estas bases de datos permiten consultar, actualizar y gestionar esos datos de forma rápida, segura y
+            ordenada, optimizando la administración diaria y facilitando la toma de decisiones.</span>
+    </div>
+
+
+</div>
+
+{% endblock %}

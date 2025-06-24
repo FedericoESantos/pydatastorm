@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio | {{ title }}{% endblock %}
+
+{% block content %}
+
+<div class="contenedor-carruseles">
+    <div class="carrusel">
+        <div class="carrusel-inner">
+            <img src="/static/img/carrusel/1.jpg" alt="1">
+            <img src="/static/img/carrusel/2.jpg" alt="2">
+            <img src="/static/img/carrusel/3.jpg" alt="3">
+            <img src="/static/img/carrusel/1.jpg" alt="1">
+            <img src="/static/img/carrusel/2.jpg" alt="2">
+            <img src="/static/img/carrusel/3.jpg" alt="3">
+        </div>
+    </div>
+
+    <div class="carrusel">
+        <div class="carrusel-inner">
+            <img src="/static/img/carrusel/4.jpg" alt="4">
+            <img src="/static/img/carrusel/5.jpg" alt="5">
+            <img src="/static/img/carrusel/6.jpg" alt="6">
+            <img src="/static/img/carrusel/4.jpg" alt="4">
+            <img src="/static/img/carrusel/5.jpg" alt="5">
+            <img src="/static/img/carrusel/6.jpg" alt="6">
+        </div>
+    </div>
+
+    <div class="carrusel">
+        <div class="carrusel-inner">
+            <img src="/static/img/carrusel/7.jpg" alt="7">
+            <img src="/static/img/carrusel/8.jpg" alt="8">
+            <img src="/static/img/carrusel/9.jpg" alt="9">
+            <img src="/static/img/carrusel/7.jpg" alt="7">
+            <img src="/static/img/carrusel/8.jpg" alt="8">
+            <img src="/static/img/carrusel/9.jpg" alt="9">
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="info">
+        <h2>Soluciones Empresariales</h2>
+        <span>
+            ♦ Organizamos tu empresa con profesionalismo y compromiso. <br>
+            ♦ Diseñamos <strong>bases de datos personalizadas</strong> según tus necesidades y desarrollamos
+            <strong>aplicaciones de escritorio</strong>
+            con bases de datos internas para uso comercial y empresarial. <br>
+            ♦ Creamos <strong>logotipos</strong> formales e informales, <strong>banners publicitarios</strong> y
+            gestionamos campañas de <strong>Community
+                Manager</strong> para potenciar tus ventas. <br>
+            ♦ Además, desarrollamos <strong>chatbots con inteligencia artificial</strong> para sitios web y
+            soluciones automatizadas
+            basadas en Python e IA. <br>
+            <strong>Todo lo que tu negocio necesita, en un solo lugar.</strong>
+        </span>
+    </div>
+    <div class="imagen">
+        <img src="{{ url_for('static', filename='img/section.jpg') }}" alt="informaticos">
+    </div>
+</section>
+
+<hr>
+
+<div class="serv">
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/diseño.jpg') }}" alt="diseño">
+        <div class="card-info">
+            <h2>Diseño Gráfico</h2>
+            <a href="{{ url_for('disenio') }}"><button>Ver Detalle</button></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/bases.jpg') }}" alt="base">
+        <div class="card-info">
+            <h2>Bases de Datos</h2>
+            <a href="{{ url_for('base_datos') }}"><button>Ver Detalle</button></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/webs.jpg') }}" alt="App Webs">
+        <div class="card-info">
+            <h2>Aplicaciones Webs</h2>
+            <a href="{{ url_for('appweb') }}"><button>Ver Detalle</button></a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/escritorio.jpg') }}" alt="escritorio">
+        <div class="card-info">
+            <h2>Aplicaciones de Escritorio</h2>
+            <a href="{{ url_for('appescritorio') }}"><button>Ver Detalle</button></a>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="medios-contacto">
+    <div class="redes">
+        <h2>Redes</h2>
+        <div>
+            <img src="{{ url_for('static', filename='img/redes/facebook.png') }}" alt="face">
+            <a href="https://www.facebook.com/pydatastorm/"><p>/pydatastorm</p></a>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='img/redes/instagram.png') }}" alt="insta">
+            <a href="https://www.instagram.com/pydatastorm/"><p>/pydatastorm</p></a>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='img/redes/youtube.png') }}" alt="youtube">
+            <p>/pydatastorm</p>
+        </div>
+    </div>
+
+    <div class="pagos">
+        <h2>Medios de Pago</h2>
+        <div class="banco">
+            <img src="{{ url_for('static', filename='img/pagos/banco.png') }}" alt="banco">
+            <br>
+            <strong>ALIAS</strong>
+            <p>FLOR.FINURA.REASUME</p>
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='img/pagos/mercado-pago.png') }}" alt="mpago">
+            <br>
+            <strong>ALIAS</strong>
+            <p>Fede.lp.1979</p>
+        </div>
+
+    </div>
+
+    <div class="contacto">
+        <h3>Contactános</h3>
+        <img class="mujer" src="{{ url_for('static', filename='img/contacto.jpg') }}" alt="contacto">
+        <div class="con">
+            <div class="correo">
+                <img src="{{ url_for('static', filename='img/contacto/correo.png') }}" alt="correo">
+                <br>
+                <p>pydatastorm@gmail.com</p>
+            </div>
+            <div class="whatsap">
+                <img src="{{ url_for('static', filename='img/contacto/whatsapp.png') }}" alt="whatsap">
+                <br>
+                <p>(+598) 93 938018</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+

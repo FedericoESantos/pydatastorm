@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}App de Escritorio | {{ title }}{% endblock %}
+
+{% block content %}
+
+<h1 class="titulo-serv">Aplicaciones de Escritorio</h1>
+
+<div class="rutas-serv">
+    <ul>
+        <li>
+            <a href="{{ url_for('disenio') }}"><button>Diseño Gráfico</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('base_datos') }}"><button>Base de Datos</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appweb') }}"><button>Aplicaciones Webs</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appescritorio') }}"><button>Aplicaciones de Escritorio</button></a>
+        </li>
+</div>
+
+<div class="container-serv">
+
+    <video src="">
+
+    </video>
+
+    <div class="seccion">
+        <h3>¿ Que son las Aplicaciones de Escritorio ?</h3>
+        <span>Las aplicaciones de escritorio son programas que instalás y usás directamente en una computadora (Windows,
+            macOS, Linux), sin depender de internet para funcionar.
+
+            Son ideales para tareas que requieren rendimiento, acceso a hardware local o trabajo offline, como edición
+            de fotos, gestión de inventarios, o desarrollo de software.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Bases de Datos Internas para uso Comercial</h3>
+        <span>Las bases de datos internas para uso comercial son sistemas que almacenan y organizan toda la información
+            clave de una empresa, como clientes, productos, ventas, proveedores y stock.
+
+            Están diseñadas para ser usadas exclusivamente dentro de la empresa, garantizando seguridad y control sobre
+            los datos, y facilitando procesos como facturación, inventario y análisis de ventas.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Bases de Datos Internas para uso Institucional</h3>
+        <span>Las bases de datos internas para uso institucional son sistemas que almacenan y gestionan información
+            clave para instituciones como escuelas, hospitales, o entidades gubernamentales.
+
+            Contienen datos de personal, usuarios, procesos administrativos, historial y otros registros necesarios para
+            el funcionamiento ordenado y seguro de la institución.</span>
+    </div>
+
+</div>
+
+{% endblock %}

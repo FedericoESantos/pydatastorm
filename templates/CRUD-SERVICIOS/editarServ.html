@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Servicios | {{ title }}{% endblock %}
+
+{% block content %}
+    <h1>Editar Servicios</h1>
+    <br>
+    <form method="post"> {{editarForm.csrf_token}}
+
+        <p>{{editarForm.nombre.label}}</p>
+        <p>{{editarForm.nombre(size=30)}}</p>
+
+        <p>{{editarForm.detalle.label}}</p>
+        <p>{{editarForm.detalle(size=30)}}</p>
+
+        <p>{{editarForm.precio.label}}</p>
+        <p>{{editarForm.precio(size=30)}}</p>
+
+        <p>Imagen actual: {{ servicio.imagen }}</p>
+        <p>{{ editarForm.imagen.label }}</p>
+        <p>{{ editarForm.imagen_nombre(value=servicio.imagen) }}</p>
+
+        <p class="enviar">{{editarForm.enviar()}}</p>
+
+    </form>
+    </div>
+
+    <button onclick="location.href='servicios'">
+        Regresar al listado de servicios
+    </button>
+
+{% endblock %}

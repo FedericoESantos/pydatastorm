@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Error | {{ title }}{% endblock %}
+
+{% block content %}
+
+
+    <div class="error">
+        <h1>Detalle del Error</h1>
+        <div>
+            <strong>
+                <h2>Página No Encontrada:</h2>
+                <p>{{error}}</p>
+            </strong>
+        </div>
+    </div>
+
+    <button onclick="location.href='/'">
+        Regresar al Sitio
+    </button>
+
+{% endblock %}

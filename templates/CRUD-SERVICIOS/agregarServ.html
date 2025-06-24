@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Servicios | {{ title }}{% endblock %}
+
+{% block content %}
+<div class="agregar">
+    <h1>Agregar Servicios</h1>
+    <br>
+    <form method="post" enctype="multipart/form-data"> {{servForm.csrf_token}}
+
+        <p>{{servForm.nombre.label}}</p>
+        <p>{{servForm.nombre(size=30)}}</p>
+
+        <p>{{servForm.detalle.label}}</p>
+        <p>{{servForm.detalle(size=30)}}</p>
+
+        <p>{{servForm.precio.label}}</p>
+        <p>{{servForm.precio(size=30)}}</p>
+
+        <p>{{servForm.imagen.label}}</p>
+        <p>{{servForm.imagen()}}</p>
+
+        <p class="enviar">{{servForm.enviar()}}</p>
+
+    </form>
+</div>
+
+<button onclick="location.href='servicios'">
+    Regresar al listado de servicios
+</button>
+
+{% endblock %}

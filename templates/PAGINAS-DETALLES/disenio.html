@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Diseño Gráfico | {{ title }}{% endblock %}
+
+{% block content %}
+
+<h1 class="titulo-serv">Diseño Gráfico</h1>
+
+<div class="rutas-serv">
+    <ul>
+        <li>
+            <a href="{{ url_for('disenio') }}"><button>Diseño Gráfico</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('base_datos') }}"><button>Base de Datos</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appweb') }}"><button>Aplicaciones Webs</button></a>
+        </li>
+        <li>
+            <a href="{{ url_for('appescritorio') }}"><button>Aplicaciones de Escritorio</button></a>
+        </li>
+</div>
+
+<div class="container-serv">
+
+    <video src="">
+
+    </video>
+
+    <div class="seccion">
+        <h3>¿ Que es el Diseño Gráfico ?</h3>
+        <span>El Diseño Gráfico es una disciplina visual que se encarga de comunicar ideas, mensajes o conceptos a
+            través de elementos gráficos como imágenes, tipografías, colores y composiciones. Su objetivo es transmitir
+            información de forma clara, atractiva y efectiva, ya sea en medios digitales o impresos.
+
+            Se utiliza en una enorme variedad de áreas: desde la creación de logotipos y marcas, diseño de sitios web,
+            piezas publicitarias, hasta interfaces de aplicaciones y presentaciones empresariales. </span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>¿ Que clase de Servicio ofrecemos ?</h3>
+        <span>Ofrecemos servicios de diseño digital enfocados en potenciar la imagen y presencia de tu negocio. Nos
+            especializamos en la creación de logotipos profesionales, flyers publicitarios impactantes, páginas web
+            funcionales y sitios web a medida</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Logotipos Empresariales/Comerciales</h3>
+        <span>Un logotipo empresarial o comercial es un símbolo gráfico que representa visualmente la identidad de una
+            empresa, negocio o marca. Es la primera impresión que recibe un cliente y funciona como una firma visual que
+            identifica y diferencia a la organización frente a su competencia.</span>
+    </div>
+
+    <br>
+
+    <div class="seccion">
+        <h3>Flyer Publicitarios</h3>
+        <span>Un flyer publicitario es una pieza gráfica diseñada para comunicar información de manera rápida, visual y
+            atractiva. Se utiliza para promocionar productos, servicios, eventos, ofertas o cualquier mensaje que una
+            empresa o persona quiera difundir.
+
+            Su objetivo principal es captar la atención del público en pocos segundos, transmitir un mensaje claro y
+            motivar a la acción, ya sea una compra, una visita a un sitio web o la asistencia a un evento.</span>
+    </div>
+
+</div>
+
+{% endblock %}

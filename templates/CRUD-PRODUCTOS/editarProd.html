@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Productos | {{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>Editar Productos</h1>
+    <br>
+    <form method="post"> {{editarForm.csrf_token}}
+
+        <p>{{editarForm.nombre.label}}</p>
+        <p>{{editarForm.nombre(size=30)}}</p>
+
+        <p>{{editarForm.detalle.label}}</p>
+        <p>{{editarForm.detalle(size=30)}}</p>
+
+        <p>{{editarForm.precio.label}}</p>
+        <p>{{editarForm.precio(size=30)}}</p>
+
+        <p>Imagen actual: {{ producto.imagen }}</p>
+        <p>{{ editarForm.imagen.label }}</p>
+        <p>{{ editarForm.imagen_nombre(value=producto.imagen) }}</p>
+
+        <p class="enviar">{{editarForm.enviar()}}</p>
+
+    </form>
+    </div>
+
+    <button onclick="location.href='productos'">
+        Regresar al listado de productos
+    </button>
+
+{% endblock %}
